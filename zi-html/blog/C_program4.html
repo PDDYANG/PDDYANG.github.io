@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>C语言程序设计</title>
+<link href="../../tu.ico" rel="shortcut icon"/>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+<script src="js/jquery.js" type="text/javascript"></script>
+<script src="js/script.js" type="text/javascript"></script>
+<style>
+
+.disdiv{
+	position: fixed;
+	left: 0;
+	top: 0px;
+	z-index: 111111;
+	width: 1400px;
+	height: 40px;
+	padding-right: 0px;
+	padding-left: 0px;
+	list-style: url(none) none;
+	margin: auto;
+	background: rgba(0,0,0,0.3) center center;
+}
+
+.disdiv #dda {
+	color: #0FF;
+	font-size: 36px;
+	font-family: "华文行楷";
+}
+body {
+	background-color: #CCC;
+	background-image: url(../images/24.jpg);
+	background-repeat: repeat-y;
+}
+a:link {
+	color: #0FF;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #0FF;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:active {
+	text-decoration: none;
+}
+.main{
+
+	width: 980px;
+	margin-right: auto;
+	margin-bottom: auto;
+	margin-left: 202px;
+	background:rgba(255,255,255,0.8);
+}
+.left{
+
+   float:left;
+   width:200px;
+   height:300px;
+   	position: fixed;
+	z-index: 111111;
+	padding-right: 0px;
+	padding-left: 0px;
+	list-style: url(none) none;
+	background-color:rgba(204,204,204,0.8)
+}
+.big{
+	width: 1200px;
+	margin-top: 45px;
+	margin-right: auto;
+	margin-bottom: auto;
+	margin-left: auto;
+}
+</style>
+</head>
+
+<body>
+<div class="disdiv">
+  <div class="fan" id="af" style="float:left"><a href="../blog.html"><img src="../zhanshi/images/fanh.jpg" width="70" height="20" alt="返回作品展示" longdesc="../gallery.html" /></a></div>
+<div class="WEE" id="dda" style="float:left; margin-left:50px; height:30px;">
+  欢迎来到<span class="DA">C</span>的世界 </div>
+</div>
+<div class="big">
+<div class="left">
+ <h3>C语言程序设计</h3>
+                <ul class="sidebar_link">                     <li><a href="C_program4.html">c语言知识</a></li>
+                  <li><a href="C_program3.html">代码集</a></li>
+                  <li><a href="C_program2.html">开发环境</a></li>
+                  <li><a href="C_program1.html">每日一题</a></li>
+
+  </ul></div>
+<div class="main" >
+<div class="mo" style="width: 900px; margin-left: 10px; background-color: rgba(255,255,255,0.1); font-family: '微软雅黑';">
+<p>八大排序算法 ，C语言详细版讲解！</p>
+
+<p>所谓排序、就是根据排序码的递增或者递减序列把数据元素依次排列起来，使一组任意排列的元素变为一组按其排序码线性有序的元素。</p>
+
+<p>常见的八大排序，他们之间关系如下：</p>
+
+<div style="width:850px; margin-left:20px"><img src="images/paixu.jpg" width="850" height="547"  title="排序" alt="排序" /></div><br />
+
+<blockquote>
+  <p>下面其中三种的讲解。</p>
+  <p>一、直接插入排序（Insertion Sort)    </p>
+ 
+    <p>算法思想：
+      直接插入排序的核心思想就是：将数组中的所有元素依次跟前面已经排好的元素相比较，如果选择的元素比已排序的元素小，则交换，直到全部元素都比较过 因此，从上面的描述中我们可以发现，直接插入排序可以用两个循环完成：<br />
+      第一层循环：遍历待比较的所有数组元素<br />
+      第二层循环：将本轮选择的元素(selected)与已经排好序的元素(ordered)相比较。 如果：selected > ordered，那么将二者交换。<br />
+      
+      
+      
+      算法代码：<br />
+      <div style="background-color:rgba(204,204,204,0.5)"> <blockquote>void print(int a[], int n ,int i){<br />
+      cout<&lt;1<<":";<br />
+      for(int j= 0; j<8; j++){<br />
+      cout<< a[j]<<" ";<br />
+      }<br />
+      cout<< endl;<br />
+      } <br />
+      void InsertSort(int a[], int n)<br />
+      {<br />
+      for(int i= 1; i< n; i++){<br />
+      if(a[i] < a[i-1]){   //若第i个元素大于i-1元素，直接插入。小于的话，移动有序表后插入<br />
+      int j= i-1;  <br />
+      int x = a[i];     //复制为哨兵，即存储待排序元素<br />
+      a[i] = a[i-1];           //先后移一个元素<br />
+      while(x < a[j]){   //查找在有序表的插入位置<br />
+      a[j+1] = a[j];<br />
+      j--;     //元素后移<br />
+      }<br />
+      a[j+1] = x;     //插入到正确位置<br />
+      }<br />
+      print(a,n,i);      //打印每趟排序的结果<br />
+      }<br />
+      <br />
+      }<br />
+      <br />
+      int main(){<br />
+      int a[8] = {3,1,5,7,2,4,9,6};<br />
+      InsertSort(a,8);<br />
+      print(a,8,8);<br />
+      }    </p></blockquote></div>
+  <p><br />
+  </p>
+  
+    <p>
+      二、冒泡排序（Bubble Sort）<br />
+      
+      
+      
+      算法思想：<br /><br />
+      
+      冒泡遍历所有的数据，每次对相邻元素进行两两比较，如果顺序和预先规定的顺序不一致，则进行位置交换；这样一次遍历会将最大或最小的数据上浮到顶端，之后再重复同样的操作，直到所有的数据有序。这个算法的名字由来是因为越大的元素会经由交换慢慢“浮”到数列的顶端。<br />
+      <br />
+      
+      
+      
+      算法代码：<br />
+      <br />   
+     <div style="background-color:rgba(204,204,204,0.5)"><blockquote> void bubbleSort(int a[], int n){<br />
+      for(int i =0 ; i< n-1; ++i) {<br />
+      for(int j = 0; j < n-i-1; ++j) {<br />
+      if(a[j] > a[j+1])<br />
+      {<br />
+      int tmp = a[j] ; a[j] = a[j+1] ;  a[j+1] = tmp;<br />
+      }<br />
+      }<br />
+      }<br />
+      } </blockquote><br /></div><br />
+      
+      
+      
+      
+      三、快速排序（Quick Sort）
+      
+      
+      
+      算法思想：<br /><br />
+      
+      快速排序是由东尼·霍尔所发展的一种排序算法。在平均状况下，排序 n 个项目要Ο(n logn)次比较。在最坏状况下则需要Ο(n<2)次比较，但这种状况并不常见。事实上，快速排序通常明显比其他Ο(n log n) 算法更快，因为它的内部循环（inner loop）可以在大部分的架构上很有效率地被实现出来
+      <br />
+      快速排序使用分治法（Divide and conquer）策略来把一个串行（list）分为两个子串行（sub-lists）。<br />
+      
+      算法步骤：
+      <br />
+      从数列中挑出一个元素，称为 “基准”（pivot）。<br />
+      
+      重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。在这个分区退出之后，该基准就处于数列的中间位置。这个称为分区（partition）操作。<br />
+      
+      递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序。<br /><br />
+      
+      递归的最底部情形，是数列的大小是零或一，也就是永远都已经被排序好了。虽然一直递归下去，但是这个算法总会退出，因为在每次的迭代（iteration）中，它至少会把一个元素摆到它最后的位置去。<br />
+      
+      
+      <br />
+      算法代码：<br />
+      <br /> <div style="background-color:rgba(204,204,204,0.8)"><blockquote>
+      void print(int a[], int n){<br />
+      for(int j= 0; j< n; j++){<br />
+      cout<< a[j] <<"  ";<br />
+      }<br />
+      cout<< endl;<br />
+      }<br />
+      <br />
+      void swap(int *a, int *b)<br />
+      {<br />
+      int tmp = *a;<br />
+      *a = *b;<br />
+      *b = tmp;<br />
+      }<br />
+      <br />
+      int partition(int a[], int low, int high)<br />
+      {<br />
+      int privotKey = a[low];                //基准元素<br />
+      while(low < high){                    //从表的两端交替地向中间扫描<br />
+      while(low < high  && a[high] >= privotKey) --high;  //从high 所指位置向前搜索，至多到low+1 位置。将比基准元素小的交换到低端<br />
+      swap(&a[low], &a[high]);<br />
+      while(low < high  && a[low] <= privotKey ) ++low;<br />
+      swap(&a[low], &a[high]);<br />
+      }<br />
+      print(a,10);<br />
+      return low;<br />
+      }<br />
+      
+      
+      void quickSort(int a[], int low, int high){<br />
+      if(low < high){<br />
+      int privotLoc = partition(a,  low,  high);  //将表一分为二<br />
+      quickSort(a,  low,  privotLoc -1);      //递归对低子表递归排序<br />
+      quickSort(a,   privotLoc + 1, high);    //递归对高子表递归排序<br />
+      }<br />
+      }<br />
+      
+      int main(){<br />
+      int a[10] = {3,1,5,7,2,4,9,6,10,8};<br />
+      cout<<"初始值：";<br />
+      print(a,10);<br />
+      quickSort(a,0,9);<br />
+      cout<<"结果：";<br />
+      print(a,10);<br />
+      
+      }<br />
+      
+      
+      
+      
+      
+      
+       </blockquote></div>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      </p>
+ 
+</blockquote>
+
+  </div>
+</div>
+</div>
+
+<div class="pc" id="jk" style="width: 400px; height: 20px; float: right; text-align: center; color: #0FF; font-size: 12px; margin:auto">版权所有@幻视者</div>
+<div style="display:none;" id="rocket-to-top">
+<div style="opacity:0;display:block;" class="level-2"></div>
+<div class="level-3"></div>
+
+</body>
+</html>
